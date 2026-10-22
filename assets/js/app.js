@@ -68,7 +68,7 @@
 
   function productWhatsappUrl(product) {
     const price = formatPrice(product.price);
-    const message = `Olá! Vim pelo site da L Rosa Acessórios e gostaria de saber mais sobre o produto ${product.name}${price ? `, no valor de ${price}` : ""}. Ele está disponível? ${window.location.origin}${window.location.pathname}?slug=${encodeURIComponent(product.slug)}`;
+    const message = `Olá! Vim pelo site da LRosa Acessórios e gostaria de saber mais sobre o produto ${product.name}${price ? `, no valor de ${price}` : ""}. Ele está disponível? ${window.location.origin}${window.location.pathname}?slug=${encodeURIComponent(product.slug)}`;
     return whatsappUrl(message);
   }
 
@@ -105,7 +105,7 @@
       <header class="site-header">
         <div class="header-inner">
           <a class="wordmark" href="index.html" aria-label="${escapeHtml(data.settings.brand)} — início">
-            <img class="wordmark-image" src="assets/images/logo.jpg" alt="L Rosa Acessórios">
+            <img class="wordmark-image" src="assets/images/logo.jpg" alt="LRosa Acessórios">
           </a>
           <button class="menu-toggle icon-button" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">${icon("menu")}</button>
           <nav class="main-nav" id="main-nav" aria-label="Menu principal">
@@ -130,7 +130,7 @@
       <footer class="site-footer">
         <div class="footer-inner">
           <div class="footer-brand">
-            <a class="wordmark wordmark-footer" href="index.html" aria-label="${escapeHtml(data.settings.brand)} — início"><img class="wordmark-image" src="assets/images/logo.jpg" alt="L Rosa Acessórios"></a>
+            <a class="wordmark wordmark-footer" href="index.html" aria-label="${escapeHtml(data.settings.brand)} — início"><img class="wordmark-image" src="assets/images/logo.jpg" alt="LRosa Acessórios"></a>
             <p>Uma boutique digital para descobrir peças que combinam com você.</p>
           </div>
           <div class="footer-column">
@@ -183,7 +183,7 @@
     root.innerHTML = `
       <section class="hero">
         <div class="hero-copy">
-          <p class="eyebrow">L Rosa Acessórios</p>
+          <p class="eyebrow">LRosa Acessórios</p>
           <h1>Detalhes que<br><em>falam por você.</em></h1>
           <p>Encontre acessórios para expressar seu estilo, com uma curadoria feita para acompanhar a sua história.</p>
           <a class="button button-dark" href="${catalogUrl}">Explorar coleções ${icon("arrow")}</a>
@@ -199,15 +199,15 @@
         </div>
       </section>
       <section class="section-block featured-section">
-        <div class="section-heading"><div><p class="eyebrow">Com carinho, para você</p><h2>Destaques da L Rosa</h2></div><a class="text-link" href="${catalogUrl}">Descobrir todas as peças ${icon("arrow")}</a></div>
-        ${featured.length ? `<div class="product-grid">${featured.map((product) => card(product, readFavorites().ids)).join("")}</div>` : emptyState("Nossa vitrine está sendo preparada.", "Em breve, você poderá conhecer por aqui as peças selecionadas pela L Rosa. Nenhum produto está disponível para compra neste momento.", "Conhecer as coleções", collectionUrl("prata-925"))}
+        <div class="section-heading"><div><p class="eyebrow">Com carinho, para você</p><h2>Destaques da LRosa</h2></div><a class="text-link" href="${catalogUrl}">Descobrir todas as peças ${icon("arrow")}</a></div>
+        ${featured.length ? `<div class="product-grid">${featured.map((product) => card(product, readFavorites().ids)).join("")}</div>` : emptyState("Nossa vitrine está sendo preparada.", "Em breve, você poderá conhecer por aqui as peças selecionadas pela LRosa. Nenhum produto está disponível para compra neste momento.", "Conhecer as coleções", collectionUrl("prata-925"))}
       </section>
       <section class="section-block categories-section">
         <div class="section-heading"><div><p class="eyebrow">Encontre o que combina com você</p><h2>Explore por categoria</h2></div></div>
         <div class="category-list">${["Brincos", "Cordões", "Pulseiras", "Anéis", "Conjuntos"].map((category) => `<a href="${catalogUrl}?categoria=${encodeURIComponent(category)}">${escapeHtml(category)} ${icon("arrow")}</a>`).join("")}</div>
       </section>
       <section class="story-band">
-        <p class="eyebrow">L Rosa Acessórios</p><h2>Um jeito especial de<br><em>escolher o que é seu.</em></h2>
+        <p class="eyebrow">LRosa Acessórios</p><h2>Um jeito especial de<br><em>escolher o que é seu.</em></h2>
         <p>Uma boutique digital feita para você conhecer cada detalhe e conversar diretamente com a Leilane sobre as peças.</p>
         <a class="button button-light" href="${catalogUrl}">Conhecer o catálogo ${icon("arrow")}</a>
       </section>
@@ -225,7 +225,7 @@
     const selectedCategory = params.get("categoria") || "";
     root.innerHTML = `
       <section class="page-intro">
-        <p class="eyebrow">${scopedCollection ? "Nossa curadoria" : "Descubra a L Rosa"}</p>
+        <p class="eyebrow">${scopedCollection ? "Nossa curadoria" : "Descubra a LRosa"}</p>
         <h1>${scopedCollection ? escapeHtml(scopedCollection.name) : "Catálogo"}</h1>
         <p>${scopedCollection ? escapeHtml(scopedCollection.description) : "Explore as peças disponíveis e encontre aquela que tem tudo a ver com você."}</p>
       </section>
@@ -265,7 +265,7 @@
       count.textContent = `${filtered.length} ${filtered.length === 1 ? "produto encontrado" : "produtos encontrados"}`;
       results.innerHTML = filtered.length
         ? filtered.map((product) => card(product, readFavorites().ids)).join("")
-        : `<div class="catalog-empty">${emptyState("Nenhuma peça encontrada.", "Tente ajustar sua busca ou volte em breve para conhecer as novidades da L Rosa.", "Limpar filtros", "#")}</div>`;
+        : `<div class="catalog-empty">${emptyState("Nenhuma peça encontrada.", "Tente ajustar sua busca ou volte em breve para conhecer as novidades da LRosa.", "Limpar filtros", "#")}</div>`;
     }
     form.addEventListener("input", updateResults);
     form.addEventListener("change", (event) => {
@@ -292,7 +292,7 @@
 
   function renderCollection(root) {
     const collection = currentCollection();
-    document.title = `${collection.name} | L Rosa Acessórios`;
+    document.title = `${collection.name} | LRosa Acessórios`;
     const meta = document.querySelector('meta[name="description"]');
     meta?.setAttribute("content", collection.description);
     if (collection.id === "rosa-by-glasses") {
@@ -306,7 +306,7 @@
     const slug = new URLSearchParams(window.location.search).get("slug");
     const product = products.find((item) => item.slug === slug && item.available !== false);
     if (!product) {
-      root.innerHTML = `<section class="page-intro"><p class="eyebrow">L Rosa Acessórios</p><h1>Esta peça ainda não está disponível.</h1><p>O produto pode ter sido removido ou o endereço não está correto.</p><a class="button button-outline" href="${catalogUrl}">Voltar ao catálogo</a></section>`;
+      root.innerHTML = `<section class="page-intro"><p class="eyebrow">LRosa Acessórios</p><h1>Esta peça ainda não está disponível.</h1><p>O produto pode ter sido removido ou o endereço não está correto.</p><a class="button button-outline" href="${catalogUrl}">Voltar ao catálogo</a></section>`;
       return;
     }
     const collection = getCollection(product.collection);
@@ -314,7 +314,7 @@
     const favoriteIds = readFavorites().ids;
     const wa = productWhatsappUrl(product);
     const allImages = [product.image, ...(product.images || [])].filter(Boolean);
-    document.title = `${product.name} | L Rosa Acessórios`;
+    document.title = `${product.name} | LRosa Acessórios`;
     document.querySelector('meta[name="description"]')?.setAttribute("content", product.shortDescription || product.description || product.name);
     root.innerHTML = `
       <nav class="breadcrumbs" aria-label="Navegação estrutural"><a href="index.html">Início</a><span>/</span><a href="${collectionUrl(product.collection)}">${escapeHtml(collection?.name || "Coleção")}</a><span>/</span><span aria-current="page">${escapeHtml(product.name)}</span></nav>
@@ -340,12 +340,12 @@
   }
 
   function renderCoupons(root) {
-    root.innerHTML = `<section class="coupon-page"><div class="coupon-seal" aria-hidden="true">L<span>R</span></div><p class="eyebrow">Um carinho da L Rosa</p><h1>Um mimo especial está sendo preparado para você.</h1><p>No momento, não temos cupons promocionais disponíveis. Em breve, você poderá encontrar condições especiais por aqui.</p><a class="button button-dark" href="index.html">Voltar para a loja ${icon("arrow")}</a><a class="text-link" href="${collectionUrl("prata-925")}">Conhecer as coleções</a></section>`;
+    root.innerHTML = `<section class="coupon-page"><div class="coupon-seal" aria-hidden="true">L<span>R</span></div><p class="eyebrow">Um carinho da LRosa</p><h1>Um mimo especial está sendo preparado para você.</h1><p>No momento, não temos cupons promocionais disponíveis. Em breve, você poderá encontrar condições especiais por aqui.</p><a class="button button-dark" href="index.html">Voltar para a loja ${icon("arrow")}</a><a class="text-link" href="${collectionUrl("prata-925")}">Conhecer as coleções</a></section>`;
   }
 
   function renderPolicies(root) {
     const pending = "As condições oficiais desta política serão publicadas após confirmação da proprietária da loja.";
-    root.innerHTML = `<section class="page-intro"><p class="eyebrow">Informações da loja</p><h1>Políticas</h1><p>Estamos organizando as informações para que você possa consultar com clareza antes de falar com a L Rosa.</p></section>
+    root.innerHTML = `<section class="page-intro"><p class="eyebrow">Informações da loja</p><h1>Políticas</h1><p>Estamos organizando as informações para que você possa consultar com clareza antes de falar com a LRosa.</p></section>
       <section class="policy-list">
         <article id="privacidade"><p class="eyebrow">01</p><h2>Privacidade</h2><p>${pending}</p></article>
         <article id="trocas"><p class="eyebrow">02</p><h2>Trocas e devoluções</h2><p>${pending}</p></article>
@@ -426,7 +426,7 @@
     link.href = url;
     link.target = "_blank";
     link.rel = "noopener noreferrer";
-    link.setAttribute("aria-label", "Conversar com a L Rosa pelo WhatsApp");
+    link.setAttribute("aria-label", "Conversar com a LRosa pelo WhatsApp");
     link.innerHTML = `${icon("whatsapp")}<span class="whatsapp-float-copy"><strong>Fale com a gente</strong><small>Estamos no WhatsApp</small></span>`;
     document.body.append(link);
   }

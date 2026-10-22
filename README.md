@@ -1,4 +1,4 @@
-# L Rosa Acessórios
+# LRosa Acessórios
 
 Boutique digital estática feita com HTML, CSS e JavaScript, sem dependências de build. Para testar localmente, abra `index.html` em um navegador ou sirva a pasta com um servidor estático. As páginas funcionam em hospedagem estática; não há checkout, carrinho, login ou backend.
 

@@ -1,6 +1,6 @@
 window.LROSA_DATA = {
   settings: {
-    brand: "L Rosa Acessórios",
+    brand: "LRosa Acessórios",
     owner: "Leilane",
     whatsappNumber: "5521970662452",
     instagramUrl: "https://www.instagram.com/lrosa.acessorios/",

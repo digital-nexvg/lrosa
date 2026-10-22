@@ -1,0 +1,21 @@
+{
+  id: "identificador-unico",
+  name: "Nome da peça",
+  slug: "nome-da-peca",
+  collection: "prata-925",
+  category: "Brincos",
+  price: null,
+  previousPrice: null,
+  shortDescription: "Resumo curto da peça.",
+  description: "Descrição completa usando informações confirmadas.",
+  image: "assets/images/produtos/nome-da-peca/principal.webp",
+  imageAlt: "Descrição objetiva da foto da peça",
+  images: [
+    "assets/images/produtos/nome-da-peca/detalhe-01.webp",
+    "assets/images/produtos/nome-da-peca/detalhe-02.webp"
+  ],
+  featured: false,
+  available: true,
+  features: [],
+  order: 1
+}

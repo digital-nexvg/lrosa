@@ -68,7 +68,7 @@
 
   function productWhatsappUrl(product) {
     const price = formatPrice(product.price);
-    const message = `Olá! Vim pelo site da LRosa Acessórios e gostaria de saber mais sobre o produto ${product.name}${price ? `, no valor de ${price}` : ""}. Ele está disponível? ${window.location.origin}${window.location.pathname}?slug=${encodeURIComponent(product.slug)}`;
+    const message = `Olá! Vim pelo site da LRosa Acessórios e gostaria de saber mais sobre o produto ${product.name}${price ? `, no valor de ${price}` : ""}. Ele está disponível?`;
     return whatsappUrl(message);
   }
 

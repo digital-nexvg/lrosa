@@ -179,7 +179,10 @@
   }
 
   function renderHome(root) {
-    const featured = products.filter((product) => product.featured && product.available !== false).slice(0, 4);
+    const featured = products
+      .filter((product) => product.featured && product.available !== false)
+      .sort((a, b) => (a.featuredOrder ?? 0) - (b.featuredOrder ?? 0))
+      .slice(0, 4);
     root.innerHTML = `
       <section class="hero">
         <div class="hero-copy">
@@ -313,7 +316,7 @@
     const price = formatPrice(product.price);
     const favoriteIds = readFavorites().ids;
     const wa = productWhatsappUrl(product);
-    const allImages = [product.image, ...(product.images || [])].filter(Boolean);
+    const allImages = [...new Set([product.image, ...(product.images || [])].filter(Boolean))];
     document.title = `${product.name} | LRosa Acessórios`;
     document.querySelector('meta[name="description"]')?.setAttribute("content", product.shortDescription || product.description || product.name);
     root.innerHTML = `

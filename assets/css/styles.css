@@ -132,6 +132,7 @@ h1, h2, h3, p { margin-top: 0; }
 .product-card { min-width: 0; }
 .product-image { position: relative; display: grid; aspect-ratio: 4 / 5; place-items: center; overflow: hidden; background: #f4e9e7; }
 .product-image img { width: 100%; height: 100%; object-fit: cover; }
+.product-image img[src$="/anel-02.jpg"], .detail-gallery img[src$="/anel-02.jpg"] { object-position: right center; }
 .image-placeholder { width: 92px; height: 92px; display: grid; place-items: center; border: 1px solid #cdb0b3; border-radius: 50%; color: #91606b; font: 2rem var(--serif); }
 .image-placeholder span { margin-top: -42px; margin-left: 32px; font-size: .75rem; }
 .favorite-toggle { position: absolute; top: 12px; right: 12px; display: grid; width: 38px; height: 38px; place-items: center; border: 0; border-radius: 50%; color: #6f4d55; background: rgba(255,250,249,.91); cursor: pointer; }
@@ -149,7 +150,7 @@ h1, h2, h3, p { margin-top: 0; }
 .product-detail { display: grid; grid-template-columns: 1.1fr .9fr; gap: 8%; padding: 15px 4% 90px; }
 .detail-gallery { display: grid; grid-template-columns: repeat(2, 1fr); align-content: start; gap: 12px; }
 .detail-gallery img, .detail-placeholder { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; background: #f4e9e7; }
-.detail-gallery img:only-child { grid-column: 1 / -1; }
+.detail-gallery img:only-child { grid-column: 1 / -1; width: min(100%, 520px); height: auto; aspect-ratio: auto; object-fit: contain; justify-self: center; }
 .detail-copy { padding-top: 32px; }
 .detail-copy h1 { margin: 0 0 13px; font: 500 clamp(2.2rem, 4vw, 3.4rem)/1.08 var(--serif); }
 .detail-price { margin: 0 0 22px; font-size: 1.05rem; }

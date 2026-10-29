@@ -190,6 +190,15 @@
       .filter((product) => product.featured && product.available !== false)
       .sort((a, b) => (a.featuredOrder ?? 0) - (b.featuredOrder ?? 0))
       .slice(0, 4);
+    const categories = [...new Set(collections.flatMap((collection) => collection.categories))];
+    const visibleCategories = categories.slice(0, 4);
+    const additionalCategories = categories.slice(4);
+    const categoryLinks = visibleCategories
+      .map((category) => `<a href="${catalogUrl}?categoria=${encodeURIComponent(category)}">${escapeHtml(category)} ${icon("arrow")}</a>`)
+      .join("");
+    const additionalCategoryLinks = additionalCategories
+      .map((category) => `<a class="category-extra" href="${catalogUrl}?categoria=${encodeURIComponent(category)}">${escapeHtml(category)} ${icon("arrow")}</a>`)
+      .join("");
     root.innerHTML = `
       <section class="hero">
         <div class="hero-copy">
@@ -214,7 +223,7 @@
       </section>
       <section class="section-block categories-section">
         <div class="section-heading"><div><p class="eyebrow">Encontre o que combina com você</p><h2>Explore por categoria</h2></div></div>
-        <div class="category-list">${["Brincos", "Cordões", "Pulseiras", "Anéis", "Conjuntos"].map((category) => `<a href="${catalogUrl}?categoria=${encodeURIComponent(category)}">${escapeHtml(category)} ${icon("arrow")}</a>`).join("")}</div>
+        <div class="category-list">${categoryLinks}${additionalCategories.length ? `<button class="category-more-toggle" type="button" data-category-more aria-expanded="false">Ver mais ${icon("arrow")}</button>${additionalCategoryLinks}` : ""}</div>
       </section>
       <section class="story-band">
         <p class="eyebrow">LRosa Acessórios</p><h2>Um jeito especial de<br><em>escolher o que é seu.</em></h2>
@@ -351,7 +360,7 @@
   }
 
   function renderCoupons(root) {
-    root.innerHTML = `<section class="coupon-page"><div class="coupon-seal" aria-hidden="true">L<span>R</span></div><p class="eyebrow">Um carinho da LRosa</p><h1>Um mimo especial está sendo preparado para você.</h1><p>No momento, não temos cupons promocionais disponíveis. Em breve, você poderá encontrar condições especiais por aqui.</p><a class="button button-dark" href="index.html">Voltar para a loja ${icon("arrow")}</a><a class="text-link" href="${collectionUrl("prata-925")}">Conhecer as coleções</a></section>`;
+    root.innerHTML = `<section class="coupon-page"><div class="coupon-seal" aria-hidden="true">L<span>R</span></div><p class="eyebrow">Um carinho da LRosa</p><h1>5% de desconto na primeira compra.</h1><p>Use o cupom de boas-vindas e aproveite seu primeiro pedido na LRosa.</p><div class="coupon-code">BEMVINDA5</div><p class="coupon-note">Cupom válido para a primeira compra.</p><a class="button button-dark" href="${catalogUrl}">Conhecer as peças ${icon("arrow")}</a></section>`;
   }
 
   function renderPolicies(root) {
@@ -394,6 +403,14 @@
       }
     });
     document.addEventListener("click", (event) => {
+      const moreButton = event.target.closest("[data-category-more]");
+      if (moreButton) {
+        const categoryList = moreButton.closest(".category-list");
+        const expanded = categoryList.classList.toggle("is-expanded");
+        moreButton.setAttribute("aria-expanded", String(expanded));
+        moreButton.innerHTML = `${expanded ? "Ver menos" : "Ver mais"} ${icon("arrow")}`;
+        return;
+      }
       const button = event.target.closest("[data-favorite]");
       if (!button) return;
       const state = readFavorites();

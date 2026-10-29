@@ -2,7 +2,7 @@ window.LROSA_DATA = {
   settings: {
     brand: "LRosa Acessórios",
     owner: "Leilane",
-    whatsappNumber: "5521970662452",
+    whatsappNumber: "5521970662352",
     instagramUrl: "https://www.instagram.com/lrosa.acessorios/",
     announcement: ""
   },
@@ -10,20 +10,20 @@ window.LROSA_DATA = {
     {
       id: "prata-925",
       name: "Prata 925",
-      description: "Uma curadoria delicada para acompanhar você em todos os momentos.",
-      categories: ["Brincos", "Cordões", "Pulseiras", "Anéis"]
+      description: "Peças banhadas na prata 925 para acompanhar você em todos os momentos.",
+      categories: ["Brincos", "Cordões", "Anéis", "Pulseiras", "Conjuntos", "Personalizados"]
     },
     {
       id: "folheados-18k",
       name: "Folheados 18K",
       description: "Peças para compor seu estilo com elegância e personalidade.",
-      categories: ["Brincos", "Cordões", "Pulseiras", "Anéis", "Conjuntos"]
+      categories: ["Brincos", "Cordões", "Anéis", "Pulseiras", "Linha Infantil", "Personalizados", "Religiosos", "Conjuntos Maximalista", "Conjuntos Minimalistas"]
     },
     {
       id: "rosa-by-glasses",
-      name: "Rosa By Glasses",
-      description: "Nossa linha de óculos está sendo preparada com muito carinho.",
-      categories: ["Óculos"]
+      name: "LROSA GLASSES",
+      description: "Óculos para acompanhar todos os seus momentos com estilo.",
+      categories: ["Linha Bronze", "Linha Silver", "Linha Ouro", "Linha Esportiva"]
     }
   ]
 };

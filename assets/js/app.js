@@ -72,6 +72,13 @@
     return whatsappUrl(message);
   }
 
+  function favoritesWhatsappUrl(saved) {
+    const productsMessage = saved
+      .map((product) => `- ${product.name}${formatPrice(product.price) ? ` — ${formatPrice(product.price)}` : ""}`)
+      .join("\n");
+    return whatsappUrl(`Olá! Vim pelo site da LRosa Acessórios e gostaria de saber mais sobre estes produtos favoritos:\n${productsMessage}`);
+  }
+
   function currentCollection() {
     const params = new URLSearchParams(window.location.search);
     return getCollection(params.get("colecao")) || collections[0];
@@ -337,9 +344,10 @@
   function renderFavorites(root) {
     const state = readFavorites();
     const saved = products.filter((product) => state.ids.includes(product.id) && product.available !== false);
+    const favoritesWhatsapp = saved.length ? favoritesWhatsappUrl(saved) : null;
     root.innerHTML = `<section class="page-intro"><p class="eyebrow">Sua seleção pessoal</p><h1>Favoritos</h1><p>Guarde por aqui as peças que chamaram a sua atenção. Seus favoritos ficam salvos neste navegador.</p></section>
       ${state.error ? '<p class="storage-warning" role="alert">Não foi possível acessar os favoritos salvos neste navegador. Verifique as configurações de armazenamento e tente novamente.</p>' : ""}
-      ${saved.length ? `<section class="product-grid favorites-grid">${saved.map((product) => card(product, state.ids)).join("")}</section>` : emptyState("Ainda não há favoritos salvos.", "Quando você salvar uma peça, ela aparecerá aqui para consultar com calma.", "Explorar o catálogo", catalogUrl)}`;
+      ${saved.length ? `${favoritesWhatsapp ? `<div class="favorites-actions"><a class="button button-dark" href="${favoritesWhatsapp}" target="_blank" rel="noopener noreferrer">Enviar favoritos pelo WhatsApp ${icon("arrow")}</a></div>` : ""}<section class="product-grid favorites-grid">${saved.map((product) => card(product, state.ids)).join("")}</section>` : emptyState("Ainda não há favoritos salvos.", "Quando você salvar uma peça, ela aparecerá aqui para consultar com calma.", "Explorar o catálogo", catalogUrl)}`;
   }
 
   function renderCoupons(root) {

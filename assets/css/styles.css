@@ -145,6 +145,7 @@ h1, h2, h3, p { margin-top: 0; }
 .product-card .text-link { font-size: .69rem; }
 .catalog-empty { grid-column: 1 / -1; }
 .catalog-empty .empty-state { min-height: 300px; }
+.favorites-actions { display: flex; justify-content: flex-end; margin-bottom: 24px; }
 .breadcrumbs { display: flex; flex-wrap: wrap; gap: 9px; padding: 27px 0; color: var(--muted); font-size: .72rem; }
 .breadcrumbs a:hover { color: var(--rose-dark); }
 .product-detail { display: grid; grid-template-columns: 1.1fr .9fr; gap: 8%; padding: 15px 4% 90px; }

@@ -208,7 +208,7 @@
           <a class="button button-dark" href="${catalogUrl}">Explorar coleções ${icon("arrow")}</a>
         </div>
         <div class="hero-art">
-          <img class="hero-image" src="assets/images/home.jpg" alt="Acessórios delicados sobre uma composição em tons de rosa" fetchpriority="high">
+          <img class="hero-image" src="images/produtos/hero.jpg" alt="Composição rosa da LRosa com óculos e acessórios" fetchpriority="high">
         </div>
       </section>
       <section class="section-block collections-section">

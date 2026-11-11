@@ -32,7 +32,7 @@ O cadastro deve usar os caminhos relativos desde a pasta principal do site, por 
 - `name`: nome mostrado na loja.
 - `slug`: nome para a URL, em minúsculas, sem acentos e com hífens. Também dá nome à pasta das fotos.
 - `collection`: `prata-925`, `folheados-18k` ou `rosa-by-glasses`.
-- `category`: categoria disponível naquela coleção: Prata 925 aceita `Brincos`, `Cordões`, `Pulseiras`, `Anéis`; Folheados 18K aceita essas categorias e `Conjuntos`; Rosa By Glasses usa `Óculos`.
+- `category`: categoria disponível naquela coleção: Prata 925 aceita `Brincos`, `Cordões`, `Pulseiras`, `Anéis`; Folheados 18K aceita essas categorias e `Conjuntos`; LROSA GLASSES aceita `Bronze`, `Silver` e `Gold`.
 - `price`: preço atual como número, sem `R$` (por exemplo, `89.90`). Use `null` quando ainda não houver preço confirmado.
 - `previousPrice`: preço anterior real como número, ou `null`. Só será mostrado como preço anterior quando for maior que o preço atual.
 - `shortDescription` e `description`: textos da peça.

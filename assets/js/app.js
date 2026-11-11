@@ -315,7 +315,13 @@
     const meta = document.querySelector('meta[name="description"]');
     meta?.setAttribute("content", collection.description);
     if (collection.id === "rosa-by-glasses") {
-      root.innerHTML = `<section class="collection-preparing"><p class="eyebrow">${escapeHtml(collection.name)}</p><h1>Um novo olhar<br><em>está chegando.</em></h1><p>${escapeHtml(collection.description)} No momento, ainda não temos produtos cadastrados nesta coleção.</p><a class="button button-dark" href="${catalogUrl}">Conhecer as outras coleções ${icon("arrow")}</a></section>`;
+      const categoryLinks = collection.categories
+        .map((category) => {
+          const query = new URLSearchParams({ colecao: collection.id, categoria }).toString();
+          return `<a href="${catalogUrl}?${escapeHtml(query)}">${escapeHtml(category)} ${icon("arrow")}</a>`;
+        })
+        .join("");
+      root.innerHTML = `<section class="collection-preparing"><p class="eyebrow">${escapeHtml(collection.name)}</p><h1>Um novo olhar<br><em>está chegando.</em></h1><p>${escapeHtml(collection.description)} No momento, ainda não temos produtos cadastrados nesta coleção.</p><a class="button button-dark" href="${catalogUrl}">Conhecer as outras coleções ${icon("arrow")}</a></section><section class="section-block categories-section"><div class="section-heading"><div><p class="eyebrow">${escapeHtml(collection.name)}</p><h2>Explore as categorias</h2></div></div><div class="category-list">${categoryLinks}</div></section>`;
       return;
     }
     renderCatalog(root, collection);

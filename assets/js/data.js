@@ -23,7 +23,7 @@ window.LROSA_DATA = {
       id: "rosa-by-glasses",
       name: "LROSA GLASSES",
       description: "Óculos para acompanhar todos os seus momentos com estilo.",
-      categories: ["Linha Bronze", "Linha Silver", "Linha Ouro", "Linha Esportiva"]
+      categories: ["Bronze", "Silver", "Gold"]
     }
   ]
 };
